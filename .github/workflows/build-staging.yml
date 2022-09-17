@@ -61,14 +61,11 @@ jobs:
         uses: Azure/setup-helm@v3.3
         
       - name: Get AKS credentials
-        uses: azure/login@v1
+        uses: azure/aks-set-context@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - uses: azure/aks-set-context@v3
-        with:
-          resource-group: 'mslearn-gh-pipelines-14912'
-          cluster-name: 'contoso-video'
+          resource-group: mslearn-gh-pipelines-14912
+          cluster-name: contoso-video
           
       - name: Run Helm Deploy
         run: |
