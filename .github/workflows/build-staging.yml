@@ -67,8 +67,8 @@ jobs:
 
       - uses: azure/aks-set-context@v3
         with:
-          resource-group: mslearn-gh-pipelines-14912
-          cluster-name: contoso-video
+          resource-group: 'mslearn-gh-pipelines-14912'
+          cluster-name: 'contoso-video'
           
       - name: Run Helm Deploy
         run: |
